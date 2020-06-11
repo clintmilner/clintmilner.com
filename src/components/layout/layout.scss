@@ -1,0 +1,118 @@
+@import '~normalize.css/normalize.css';
+
+:root {
+
+  --blue1: #54a7f1;
+  --blue2: #388be1;
+  --blue3: #1e5297;
+  --blue4: #12264e;
+  --blueDeg: 60deg;
+
+  --green1: #9bc7b3;
+  --green2: #398388;
+  --green3: #2e6d79;
+  --green4: #143843;
+
+  --purp1: #a19fe0;
+  --purp2: #6d66b9;
+  --purp3: #43438b;
+  --purp4: #3f3871;
+
+  --warm1: #f7ce47;
+  --warm2: #f4b941;
+  --warm3: #ee6d2e;
+  --warm4: #da4c24;
+  --warm5: #d23521;
+  --warm6: #b82b1f;
+  --warm7: #71141a;
+  --warmDeg: 311deg;
+}
+
+.blue {
+  background-image: linear-gradient(
+                  var(--blueDeg),
+                  var(--blue1) 0%,
+                  var(--blue1) 25%,
+                  var(--blue2) 25%,
+                  var(--blue2) 50%,
+                  var(--blue3) 50%,
+                  var(--blue3) 75%,
+                  var(--blue4) 75%,
+                  var(--blue4) 100%
+  );
+}
+
+.green {
+  background: linear-gradient(
+                  311deg,
+                  var(--green1) 0%,
+                  var(--green1) 25%,
+                  var(--green2) 25%,
+                  var(--green2) 50%,
+                  var(--green3) 50%,
+                  var(--green3) 75%,
+                  var(--green4) 75%,
+                  var(--green4) 100%
+  );
+}
+
+.purple {
+  background: linear-gradient(
+                  111deg,
+                  var(--purp1) 0%,
+                  var(--purp1) 25%,
+                  var(--purp2) 25%,
+                  var(--purp2) 50%,
+                  var(--purp3) 50%,
+                  var(--purp3) 75%,
+                  var(--purp4) 75%,
+                  var(--purp4) 100%
+  );
+}
+
+.warm {
+  background: linear-gradient(
+                  var(--warmDeg),
+                  var(--warm1) percentage(0 / 7),
+                  var(--warm1) percentage(1 / 7),
+                  var(--warm2) percentage(1 / 7),
+                  var(--warm2) percentage(2 / 7),
+                  var(--warm3) percentage(2 / 7),
+                  var(--warm3) percentage(3 / 7),
+                  var(--warm4) percentage(3 / 7),
+                  var(--warm4) percentage(4 / 7),
+                  var(--warm5) percentage(4 / 7),
+                  var(--warm5) percentage(5 / 7),
+                  var(--warm6) percentage(5 / 7),
+                  var(--warm6) percentage(6 / 7),
+                  var(--warm7) percentage(6 / 7)
+  );
+}
+
+html, body {
+  height: 100%;
+}
+
+.page {
+  padding: 1em;
+  height: calc(100vh - 2em);
+  font-size: 24px;
+  font-family: 'Source Code Pro', monospace;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3 {
+  font-family: Raleway, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+  color: #fff;
+  text-transform: capitalize;
+}
+
+p {
+  color: #fff;
+  line-height: 32px;
+}
+
