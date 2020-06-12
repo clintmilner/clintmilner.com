@@ -1,5 +1,7 @@
 @import '~normalize.css/normalize.css';
 :root {
+  --gradWidth: 20px;
+  --transparent: rgba(0,0,0,0);
   --blue1: #54a7f1;
   --blue2: #388be1;
   --blue3: #1e5297;
@@ -24,7 +26,7 @@
 }
 
 .blue {
-  background-image: linear-gradient(var(--blueDeg), var(--blue1) 0%, var(--blue1) 25%, var(--blue2) 25%, var(--blue2) 50%, var(--blue3) 50%, var(--blue3) 75%, var(--blue4) 75%, var(--blue4) 100%);
+  background-image: linear-gradient(0, var(--blue1) 0%, var(--blue1) 25%, var(--blue2) 25%, var(--blue2) 50%, var(--blue3) 50%, var(--blue3) 75%, var(--blue4) 75%, var(--blue4) 100%);
 }
 
 .green {
@@ -36,7 +38,7 @@
 }
 
 .warm {
-  background: linear-gradient(var(--warmDeg), var(--warm1) 0%, var(--warm1) 14.2857142857%, var(--warm2) 14.2857142857%, var(--warm2) 28.5714285714%, var(--warm3) 28.5714285714%, var(--warm3) 42.8571428571%, var(--warm4) 42.8571428571%, var(--warm4) 57.1428571429%, var(--warm5) 57.1428571429%, var(--warm5) 71.4285714286%, var(--warm6) 71.4285714286%, var(--warm6) 85.7142857143%, var(--warm7) 85.7142857143%);
+  background: linear-gradient(311deg, var(--warm1) 0%, var(--warm1) 14.2857142857%, var(--warm2) 14.2857142857%, var(--warm2) 28.5714285714%, var(--warm3) 28.5714285714%, var(--warm3) 42.8571428571%, var(--warm4) 42.8571428571%, var(--warm4) 57.1428571429%, var(--warm5) 57.1428571429%, var(--warm5) 71.4285714286%, var(--warm6) 71.4285714286%, var(--warm6) 85.7142857143%, var(--warm7) 85.7142857143%, var(--transparent) 85.7142857143%, var(--transparent) 100%);
 }
 
 html, body {
@@ -56,12 +58,13 @@ h1, h2, h3 {
   font-family: Raleway, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   font-weight: 900;
   letter-spacing: 1px;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
   color: #fff;
   text-transform: capitalize;
 }
 
 p {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
   color: #fff;
   line-height: 32px;
 }

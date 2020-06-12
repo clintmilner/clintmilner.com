@@ -2,30 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import Image from "./image";
 import PropTypes from "prop-types";
-const size = {
-  mobileS: "320px",
-  mobileM: "375px",
-  mobileL: "425px",
-  tablet: "768px",
-  laptop: "1024px",
-  laptopL: "1440px",
-  desktop: "2560px",
-};
-export const device = {
-  mobileS: `(min-width: ${size.mobileS})`,
-  mobileM: `(min-width: ${size.mobileM})`,
-  mobileL: `(min-width: ${size.mobileL})`,
-  tablet: `(min-width: ${size.tablet})`,
-  laptop: `(min-width: ${size.laptop})`,
-  laptopL: `(min-width: ${size.laptopL})`,
-  desktop: `(min-width: ${size.desktop})`,
-  desktopL: `(min-width: ${size.desktop})`,
-};
+import { device } from "./Screens";
 
 const MainContent = styled.main`
   display: flex;
   height: 100%;
   padding: 0 1em;
+  
 
   div {
     width: 50%;
@@ -35,6 +18,20 @@ const MainContent = styled.main`
     order: 1;
     display: flex;
     flex-direction: column;
+    
+    background: linear-gradient(
+                  40deg,
+                  var(--green1) 0%,
+                  var(--green1) 10%,
+                  var(--green2) 10%,
+                  var(--green2) 20%,
+                  var(--green3) 20%,
+                  var(--green3) 30%,
+                  var(--green4) 30%,
+                  var(--green4) 40%,
+                  var(--transparent) 40%,
+                  var(--transparent) 100%
+  );
 
     & > * {
       align-self: center;
@@ -48,6 +45,19 @@ const MainContent = styled.main`
   }
 
   .subpage {
+    background: linear-gradient(
+                  230deg,
+                  var(--purp1) 0%,
+                  var(--purp1) 10%,
+                  var(--purp2) 10%,
+                  var(--purp2) 20%,
+                  var(--purp3) 20%,
+                  var(--purp3) 30%,
+                  var(--purp4) 30%,
+                  var(--purp4) 40%,
+                  var(--transparent) 40%,
+                  var(--transparent) 100%
+  );
     order: 2;
     max-height: 80vh;
     overflow-y: auto;
@@ -79,7 +89,7 @@ const MainContent = styled.main`
 `;
 const Main = ({ siteTitle, children }) => {
   return (
-    <MainContent>
+    <MainContent className={"warm"}>
       <div className="main">
         <h1>Hello</h1>
         <Image />
