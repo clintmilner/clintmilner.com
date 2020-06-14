@@ -5,6 +5,15 @@ module.exports = {
     author: `@clint_milner`,
   },
   plugins: [
+    "gatsby-plugin-catch-links",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/src/pages`,
+        name: "pages",
+      },
+    },
+    "gatsby-transformer-remark",
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
@@ -26,11 +35,11 @@ module.exports = {
       options: {
         name: `gatsby-starter-default`,
         short_name: `starter`,
-        start_url: `/`,
+        start_url: `/home`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/clint-milner-headshot.jpg`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

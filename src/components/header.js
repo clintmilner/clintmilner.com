@@ -26,24 +26,28 @@ const HeaderWrap = styled.header`
   }
 `;
 
-const Header = () => {
+const Header = ({ pages }) => {
+  if (!pages && pages.length <= 0) {
+    return (
+      <HeaderWrap>
+        <Logo />
+      </HeaderWrap>
+    );
+  }
+  console.info(pages);
   return (
     <HeaderWrap>
-      <Link to="/about" activeClassName="purple active">
-        About
-      </Link>
-      <Link to="/experience" activeClassName="green active">
-        Experience
-      </Link>
-      <Link to="/">
-        <Logo />
-      </Link>
-      <Link to="/uses" activeClassName="blue active">
-        Uses
-      </Link>
-      <Link to="/contact" activeClassName="warm active">
-        Contact
-      </Link>
+      {pages
+        .sort((a, b) => a.frontmatter.order - b.frontmatter.order)
+        .map((page) => (
+          <Link
+            to={page.frontmatter.path}
+            key={page.id}
+            activeClassName={page.frontmatter.className}
+          >
+            {page.frontmatter.title ? page.frontmatter.title : <Logo />}
+          </Link>
+        ))}
     </HeaderWrap>
   );
 };
