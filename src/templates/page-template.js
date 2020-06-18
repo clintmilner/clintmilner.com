@@ -4,7 +4,7 @@ import SEO from "../components/seo";
 import { graphql } from "gatsby";
 
 export default function PageTemplate({ data }) {
-  console.log(data);
+  // console.log(data);
   const { allMarkdownRemark } = data;
   const [page] = allMarkdownRemark.nodes;
   return (

@@ -34,7 +34,7 @@ const Header = ({ pages }) => {
       </HeaderWrap>
     );
   }
-  console.info(pages);
+  // console.info(pages);
   return (
     <HeaderWrap>
       {pages

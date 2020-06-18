@@ -8,7 +8,6 @@ const MainContent = styled.main`
   display: flex;
   height: 100%;
   padding: 0 1em;
-  
 
   div {
     width: 50%;
@@ -18,7 +17,6 @@ const MainContent = styled.main`
     order: 1;
     display: flex;
     flex-direction: column;
-    
     background: linear-gradient(
                   40deg,
                   var(--green1) 0%,
@@ -45,6 +43,9 @@ const MainContent = styled.main`
   }
 
   .subpage {
+    word-break: break-all;
+    hyphens: auto;
+    overflow-x: hidden;
     background: linear-gradient(
                   230deg,
                   var(--purp1) 0%,
