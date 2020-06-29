@@ -2,13 +2,19 @@ import { Link } from "gatsby";
 import React from "react";
 import styled from "styled-components";
 import Logo from "./Logo";
+import Toggle from "./Toggle";
 
 const HeaderWrap = styled.header`
   background: white;
   border: 10px solid;
   border-image-slice: 1;
-  border-image-source: linear-gradient(60deg, cornflowerblue, hotpink, goldenrod);
-}
+  border-image-source: linear-gradient(
+    60deg,
+    cornflowerblue,
+    hotpink,
+    goldenrod
+  );
+
   display: flex;
   width: calc(100% - 20px);
   justify-content: center;
@@ -26,7 +32,7 @@ const HeaderWrap = styled.header`
   }
 `;
 
-const Header = ({ pages }) => {
+const Header = ({ pages, onClick, isToggled }) => {
   if (!pages && pages.length <= 0) {
     return (
       <HeaderWrap>
@@ -48,6 +54,7 @@ const Header = ({ pages }) => {
             {page.frontmatter.title ? page.frontmatter.title : <Logo />}
           </Link>
         ))}
+      <Toggle onClick={onClick} toggled={isToggled} />
     </HeaderWrap>
   );
 };

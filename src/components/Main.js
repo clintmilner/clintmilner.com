@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import styled from "styled-components";
 import Image from "./image";
 import PropTypes from "prop-types";
@@ -109,4 +109,4 @@ Main.defaultProps = {
   siteTitle: ``,
   children: <></>,
 };
-export default Main;
+export default memo(Main);

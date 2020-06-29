@@ -5,9 +5,9 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { useStaticQuery, graphql } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 
 import Header from "../header";
 import "./layout.css";
@@ -37,9 +37,18 @@ const Layout = ({ children }) => {
     }
   `);
 
+  const [isToggled, setIsToggled] = useState(false);
+  const handleClick = () => {
+    setIsToggled((s) => !s);
+  };
+
   return (
-    <div className="page blue">
-      <Header pages={data?.allMarkdownRemark?.nodes} />
+    <div className={`page ${isToggled ? "blue" : "warm"}`}>
+      <Header
+        isToggled={isToggled}
+        onClick={handleClick}
+        pages={data?.allMarkdownRemark?.nodes}
+      />
       <Main siteTitle={data?.site?.siteMetadata?.title}>{children}</Main>
       <Footer siteDescription={data?.site?.siteMetadata?.description} />
     </div>
